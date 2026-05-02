@@ -2,6 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include <RcppArmadillo.h>
+#include <RcppEigen.h>
 #include <Rcpp.h>
 
 using namespace Rcpp;
@@ -11,6 +12,116 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// dgcmatrix_row_scale
+Eigen::MatrixXd dgcmatrix_row_scale(Eigen::Map<Eigen::SparseMatrix<double>> mat, bool scale, bool center, double scale_max);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_row_scale(SEXP matSEXP, SEXP scaleSEXP, SEXP centerSEXP, SEXP scale_maxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< bool >::type scale(scaleSEXP);
+    Rcpp::traits::input_parameter< bool >::type center(centerSEXP);
+    Rcpp::traits::input_parameter< double >::type scale_max(scale_maxSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_row_scale(mat, scale, center, scale_max));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_row_scale2
+Eigen::MatrixXd dgcmatrix_row_scale2(Eigen::Map<Eigen::SparseMatrix<double>> mat, std::vector<double>& mu, std::vector<double>& sigma, bool scale, bool center, double scale_max);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_row_scale2(SEXP matSEXP, SEXP muSEXP, SEXP sigmaSEXP, SEXP scaleSEXP, SEXP centerSEXP, SEXP scale_maxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< std::vector<double>& >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< std::vector<double>& >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< bool >::type scale(scaleSEXP);
+    Rcpp::traits::input_parameter< bool >::type center(centerSEXP);
+    Rcpp::traits::input_parameter< double >::type scale_max(scale_maxSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_row_scale2(mat, mu, sigma, scale, center, scale_max));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowsums
+std::vector<double> dgcmatrix_rowsums(Eigen::Map<Eigen::SparseMatrix<double>> mat);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowsums(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowsums(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowmeans
+std::vector<double> dgcmatrix_rowmeans(Eigen::Map<Eigen::SparseMatrix<double>> mat);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowmeans(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowmeans(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowvars_know_means
+std::vector<double> dgcmatrix_rowvars_know_means(Eigen::Map<Eigen::SparseMatrix<double>> mat, const std::vector<double>& mu);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowvars_know_means(SEXP matSEXP, SEXP muSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type mu(muSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowvars_know_means(mat, mu));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowvars
+std::vector<double> dgcmatrix_rowvars(Eigen::Map<Eigen::SparseMatrix<double>> mat);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowvars(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowvars(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowmeans_expm1
+std::vector<double> dgcmatrix_rowmeans_expm1(Eigen::Map<Eigen::SparseMatrix<double>> mat);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowmeans_expm1(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowmeans_expm1(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// matrix_rowmeans_expm1
+std::vector<double> matrix_rowmeans_expm1(Eigen::Map<Eigen::MatrixXd> mat);
+RcppExport SEXP _scTenifoldNet_matrix_rowmeans_expm1(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(matrix_rowmeans_expm1(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowvars_expm1_know_means
+std::vector<double> dgcmatrix_rowvars_expm1_know_means(Eigen::Map<Eigen::SparseMatrix<double>> mat, const std::vector<double>& mu);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowvars_expm1_know_means(SEXP matSEXP, SEXP muSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type mu(muSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowvars_expm1_know_means(mat, mu));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dgcmatrix_rowvars_expm1
+std::vector<double> dgcmatrix_rowvars_expm1(Eigen::Map<Eigen::SparseMatrix<double>> mat);
+RcppExport SEXP _scTenifoldNet_dgcmatrix_rowvars_expm1(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::SparseMatrix<double>> >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(dgcmatrix_rowvars_expm1(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
 // pcNetCoreRcpp
 arma::mat pcNetCoreRcpp(const arma::mat& X_std, int nComp);
 RcppExport SEXP _scTenifoldNet_pcNetCoreRcpp(SEXP X_stdSEXP, SEXP nCompSEXP) {
@@ -25,6 +136,16 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_scTenifoldNet_dgcmatrix_row_scale", (DL_FUNC) &_scTenifoldNet_dgcmatrix_row_scale, 4},
+    {"_scTenifoldNet_dgcmatrix_row_scale2", (DL_FUNC) &_scTenifoldNet_dgcmatrix_row_scale2, 6},
+    {"_scTenifoldNet_dgcmatrix_rowsums", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowsums, 1},
+    {"_scTenifoldNet_dgcmatrix_rowmeans", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowmeans, 1},
+    {"_scTenifoldNet_dgcmatrix_rowvars_know_means", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowvars_know_means, 2},
+    {"_scTenifoldNet_dgcmatrix_rowvars", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowvars, 1},
+    {"_scTenifoldNet_dgcmatrix_rowmeans_expm1", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowmeans_expm1, 1},
+    {"_scTenifoldNet_matrix_rowmeans_expm1", (DL_FUNC) &_scTenifoldNet_matrix_rowmeans_expm1, 1},
+    {"_scTenifoldNet_dgcmatrix_rowvars_expm1_know_means", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowvars_expm1_know_means, 2},
+    {"_scTenifoldNet_dgcmatrix_rowvars_expm1", (DL_FUNC) &_scTenifoldNet_dgcmatrix_rowvars_expm1, 1},
     {"_scTenifoldNet_pcNetCoreRcpp", (DL_FUNC) &_scTenifoldNet_pcNetCoreRcpp, 2},
     {NULL, NULL, 0}
 };
